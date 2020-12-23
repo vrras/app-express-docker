@@ -1,0 +1,24 @@
+{
+  "name": "docker-app-test",
+  "version": "1.0.0",
+  "description": "NodeJs with docker",
+  "main": "server.js",
+  "scripts": {
+    "serve": "nodemon server.js",
+    "build:docker": "docker build --tag app-express:1.0.0 .",
+    "docker-set-tag": "docker tag app-express:1.0.0 vrras/app-express:1.0.0",
+    "deploy:registry": "docker push vrras/app-express:1.0.0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Firas",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {}
+}
